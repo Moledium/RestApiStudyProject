@@ -169,6 +169,16 @@ class ImpulseCountingControllerTest {
         ResponseEntity<Object> result = impulseController.getAllDataBaseParams();
         Assertions.assertEquals(result.getStatusCode(), HttpStatus.OK);
     }
+    @Test
+    void checkSavedInCashParam(){
+        double[] arr = {4, 2, 3, 2};
+        ValidationImpulseError errorRange = new ValidationImpulseError();
 
+        when(mockValid.validateParameters(4, 2, 3, 2)).thenReturn(errorRange);
+        when(mockStorage.isContainsInMap(arr)).thenReturn(true);
+
+        ResponseEntity<Object> result = impulseController.getImpulse(4, 3, 2 ,2);
+        Assertions.assertEquals(result.getStatusCode(), HttpStatus.OK);
+    }
 
 }
