@@ -1,14 +1,11 @@
 package com.bounce.BallBounce.service;
 
-import com.bounce.BallBounce.MySQLAccess.template.ParametersEntity;
 import com.bounce.BallBounce.entity.BallParameters;
 import com.bounce.BallBounce.entity.NumberOfCalls;
 import com.bounce.BallBounce.entity.Pair;
-import com.bounce.BallBounce.service.ImpulseCountingService;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.dao.DataAccessException;
 
 import java.util.Arrays;
 import java.util.List;

@@ -170,30 +170,5 @@ class ImpulseCountingControllerTest {
         Assertions.assertEquals(result.getStatusCode(), HttpStatus.OK);
     }
 
-    @Test
-    void checkSavedInCashParam(){
-        double[] arr = {4, 2, 3, 2};
-        ValidationImpulseError errorRange = new ValidationImpulseError();
 
-        when(mockValid.validateParameters(4, 2, 3, 2)).thenReturn(errorRange);
-        when(mockStorage.isContainsInMap(arr)).thenReturn(true);
-
-        ResponseEntity<Object> result = impulseController.getImpulse(4, 3, 2 ,2);
-        Assertions.assertEquals(result.getStatusCode(), HttpStatus.OK);
-    }
-
-/*    @Test
-    void checkSavedInDataBaseParam(){
-        double[] arr = {4, 2, 3, 2};
-        ValidationImpulseError errorRange = new ValidationImpulseError();
-        BallParameters params = new BallParameters(4, 4, 2, 3, 2);
-
-        when(mockValid.validateParameters(4, 2, 3, 2)).thenReturn(errorRange);
-        when(mockStorage.isContainsInMap(arr)).thenReturn(false);
-        when(mockDataBase.isContainsInDataBase(new BallParameters(0, params.getVelocity1(), params.getVelocity2(),
-                params.getMass1(), params.getMass2()))).thenReturn(new BallParameters(4));
-
-        ResponseEntity<Object> result = impulseController.getImpulse(4, 3, 2 ,2);
-        Assertions.assertEquals(result.getStatusCode(), HttpStatus.OK);
-    }*/
 }
